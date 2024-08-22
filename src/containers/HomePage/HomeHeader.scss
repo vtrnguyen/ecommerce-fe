@@ -1,157 +1,62 @@
-// computer
-.hheader-container {
+.hheader-wrapper {
     height: 6.25rem;
-    display: flex;
-    align-items: center;
-    padding: 0 1.2rem;
     background-color: #ff3b18;
     box-shadow: 0 0.375rem 0.375rem rgba(0, 0, 0, 0.06);
 
-    .logo {
-        font-size: 2rem;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #fff;
-        width: 20%;
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
-
-    .header-content {
-        width: 80%;
-        height: 100%;
-
-        .basic-nav-bar {
-            width: 100%;
-            height: 2.5rem;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: right;
-            color: #fff;
-
-            .nav-item {
-                width: auto;
-                padding: 0 0.75rem;
-                height: 1.875rem;
-
-                &:not(:last-child) {
-                    border-right: 0.0625rem solid #ccc;
-                }
-        
-                i {
-                    margin: 0 0.375rem;
-                }
-            }
-
-            .homepage,
-            .support,
-            .choose-language,
-            .my-account {
-                &:hover {
-                    cursor: pointer;
-                    opacity: 0.8;
-                }
-            }
-
-            .contact i {
-                &:hover {
-                    cursor: pointer;
-                    opacity: 0.8;
-                }
-            }
-        }
-
-        .display-infor {
-            width: 100%;
-            height: 3.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 1rem;
-
-            .search-bar {
-                width: 54rem;
-                height: 2.5rem;
-                background-color: #fff;
-                display: flex;
-                padding: 0.25rem; 
-
-                .search-input {
-                    width: 92%;
-                    border: none;
-                    outline: none;
-                    font-size: 1rem;
-                    padding: 0 0.75rem;
-                    display: flex;
-                    align-items: center;
-                    font-family: Arial, Helvetica, sans-serif;
-                }
-
-                .search-icon {
-                    width: 8%;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background-color: red;
-                    color: #fff;
-
-                    &:hover {
-                        cursor: pointer;
-                    }
-                }
-            }
-
-            .infor-icon {
-                font-size: 1.5rem;
-                display: flex;
-                gap: 1.5rem;
-                color: #fff;
-
-                i {
-                    &:hover {
-                        cursor: pointer;
-                        opacity: 0.8;
-                    }
-                }
-            }
-        }
-    }
-}
-
-// tablet
-@media (max-width: 768px) {
-    .hheader-container {
-
+    .main-header {
+        display: flex;
+        align-items: center;
+        padding: 0 4.2rem;
+    
         .logo {
-            font-size: 1.25rem;
+            font-size: 2rem;
             font-family: Arial, Helvetica, sans-serif;
             color: #fff;
             width: 20%;
-
+    
             &:hover {
                 cursor: pointer;
             }
         }
     
         .header-content {
+            width: 80%;
+            height: 100%;
     
             .basic-nav-bar {
+                width: 100%;
+                height: 2.5rem;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                color: #fff;
     
                 .nav-item {
-                    height: 1.25rem;
-                    font-size: 14px;
+                    width: auto;
+                    padding: 0 0.75rem;
+                    height: 1.875rem;
     
                     &:not(:last-child) {
                         border-right: 0.0625rem solid #ccc;
                     }
             
                     i {
-                        display: none;
+                        margin: 0 0.375rem;
                     }
-
+                }
+    
+                .homepage,
+                .support,
+                .choose-language,
+                .my-account {
+                    &:hover {
+                        cursor: pointer;
+                        opacity: 0.8;
+                    }
+                }
+    
+                .contact i {
                     &:hover {
                         cursor: pointer;
                         opacity: 0.8;
@@ -160,80 +65,113 @@
             }
     
             .display-infor {
-    
-                .search-bar {
-                    height: 2rem;
-                    width: 22rem;
-    
-                    .search-input {
-                        font-size: 0.85rem;
+                width: 100%;
+                height: 3.75rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 1rem;
+
+                .search-container {
+
+                    .search-bar {
+                        width: 54rem;
+                        height: 2.5rem;
+                        background-color: #fff;
+                        display: flex;
+                        padding: 0.25rem; 
+        
+                        .search-input {
+                            width: 92%;
+                            border: none;
+                            outline: none;
+                            font-size: 1rem;
+                            padding: 0 0.75rem;
+                            display: flex;
+                            align-items: center;
+                            font-family: Arial, Helvetica, sans-serif;
+                        }
+        
+                        .search-icon {
+                            width: 8%;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: red;
+                            color: #fff;
+        
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
+                    .search-recommened {
+                        font-size: 0.75rem; /* 12px -> 0.75rem */
+
+                        a {
+                            text-decoration: none;
+                            color: #fff;
+                            margin-right: 0.75rem; /* 12px -> 0.75rem */
+                        }
                     }
                 }
     
                 .infor-icon {
                     font-size: 1.5rem;
+                    display: flex;
+                    gap: 1.5rem;
+                    color: #fff;
+    
+                    i {
+                        &:hover {
+                            cursor: pointer;
+                            opacity: 0.8;
+                        }
+                    }
                 }
             }
         }
     }
-}
-
-// phone
-@media (max-width: 576px) {
-    .hheader-container {
-
-        .logo {
-            font-size: 0.85rem;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #fff;
+    
+    .nav-header {
+        display: flex;
+        padding: 1.2rem 4.2rem;
+        height: 2.25rem; /* 36px -> 2.25rem */
+        border-bottom: 0.0625rem solid rgb(235, 235, 240); /* 1px -> 0.0625rem */
+        align-items: center;
+        font-size: 0.75rem; /* 12px -> 0.75rem */
+        font-weight: 500;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #27272A;
+        
+        .promise-title {
+            width: auto;
+            font-size: 0.875rem; /* 14px -> 0.875rem */
+            font-weight: 600;
+            color: rgb(10, 103, 201) !important;
 
             &:hover {
                 cursor: pointer;
             }
         }
-    
-        .header-content {
-    
-            .basic-nav-bar {
 
-                .nav-item {
-                    font-size: 10px;
-                    height: auto;
+        .promise-item {
+            width: auto;
+            padding: 0.375rem 1.5rem; /* 6px 24px -> 0.375rem 1.5rem */
 
-                    i {
-                        display: none;
-                    }
-                
-                    &:hover {
-                        cursor: pointer;
-                        opacity: 0.8;
-                    }
-                
-                    &::before {
-                        visibility: hidden;
-                    }
-                }
+            &:not(:last-child) {
+                border-right: 0.0625rem solid #ccc;
             }
-    
-            .display-infor {
-    
-                .search-bar {
-                    height: 2rem;
-                    padding: 0 0;
-                    width: 12rem;
-    
-                    .search-input {
-                        font-size: 0.75rem;
-                    }
 
-                    .search-icon {
-                        display: none;
-                    }
-                }
-    
-                .infor-icon {
-                    font-size: 1.2rem;
-                }
+            i {
+                color: rgb(11, 116, 229) !important;
+                margin-right: 0.375rem; /* 6px -> 0.375rem */
+            }
+
+            &:hover {
+                cursor: pointer;
             }
         }
     }
