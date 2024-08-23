@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./HomePage.scss";
 
 import HomeHeader from "./HomeHeader";
-// import HomeContent from "./HomeContent";
+import HomeContent from "./HomeContent";
 // import HomeFooter from "./HomeFooter";
 
 class HomePage extends Component {
@@ -16,6 +16,7 @@ class HomePage extends Component {
         return (
             <>
                 <HomeHeader />
+                <HomeContent />
             </>
         )
     }

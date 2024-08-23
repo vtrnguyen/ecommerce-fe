@@ -1,0 +1,91 @@
+.wrapper {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 0;
+    background-color: #fff;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .05);
+
+    .section-banner-container {
+        height: auto;
+    
+        .banner-container {
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            height: 235px;
+            width: 1200px;
+            gap: 6px;
+            
+            .banner-sliders {
+                width: 66.6666666667%;
+                height: 100%;
+                overflow: hidden;
+    
+                .slick-slide {
+                    
+                    div {
+                        outline: none;
+                    }
+                }
+
+                .slick-arrow {
+                    z-index: 1;
+                    width: 40px;
+                    height: 40px;
+                }
+                
+                .slick-arrow:before {
+                    font-size: 30px;
+                }
+
+                .slick-next {
+                    right: 0;
+                }
+                
+                .slick-prev {
+                    left: 0;
+                }
+    
+                .slider-item {
+    
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+    
+            .banner-salers {
+                height: 100%;
+                width: 33.3333333333%;
+                display: flex;
+                flex-direction: column;
+                margin-left: 0.1rem;
+                gap: 0.4rem;
+    
+                .banner-image {
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+    
+                .banner-saler-top {
+                    height: 50%;
+                    background-image: url("../../assests/homepage/homecontent/top-banner.jpg");
+                }
+    
+                .banner-saler-bottom {
+                    height: 50%;
+                    background-image: url("../../assests/homepage/homecontent/bottom-banner.jpg");
+                }
+            }
+        }
+    }
+}
