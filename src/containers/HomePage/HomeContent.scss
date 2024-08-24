@@ -164,13 +164,12 @@
             }
 
             .section-category {
-                height: auto;
-                max-width: 1200px;
 
                 .section-category-content {
 
                     ul {
-                        height: 302px;
+                        padding: 0 !important;
+                        margin: 0 !important;
                         display: flex;
                         flex-direction: col;
                         flex-wrap: wrap;
@@ -197,46 +196,6 @@
                                     margin-top: 0.5rem;
                                 }
 
-                                .t-shirt {
-                                    background-image: url("../../assests/homepage/homecontent/product/t-shirt.png");
-                                }
-
-                                .phone {
-                                    background-image: url("../../assests/homepage/homecontent/product/mobile-phone.png");
-                                }
-
-                                .electronic-equiptment {
-                                    background-image: url("../../assests/homepage/homecontent/product/electronic-equiptment.png");
-                                }
-
-                                .computer {
-                                    background-image: url("../../assests/homepage/homecontent/product/computer.png");
-                                }
-
-                                .camera {
-                                    background-image: url("../../assests/homepage/homecontent/product/camera.png");
-                                }
-
-                                .watch {
-                                    background-image: url("../../assests/homepage/homecontent/product/watch.png");
-                                }
-
-                                .shoe {
-                                    background-image: url("../../assests/homepage/homecontent/product/shoe.png");
-                                }
-
-                                .household-electric-appliances {
-                                    background-image: url("../../assests/homepage/homecontent/product/household-electric-appliances.png");
-                                }
-
-                                .sport-travel {
-                                    background-image: url("../../assests/homepage/homecontent/product/sport-travel.png");
-                                }
-
-                                .driver {
-                                    background-image: url("../../assests/homepage/homecontent/product/driver.png");
-                                }
-
                                 .product-item-name {
                                     padding: 0 6px;
                                     color: rgba(0, 0, 0, .8);
@@ -253,6 +212,180 @@
                                     cursor: pointer;
                                     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .section-flash-sale {
+                width: 1200px;
+                height: 328px;
+                margin-top: 24px;
+
+                .main-section-header {
+                    color: red !important;
+                    font-weight: 800 !important;
+
+                    span {
+                        margin-left: 10px;
+                        color: #fff !important;
+                        background-color: #000;
+                        padding: 0 6px;
+                        border-radius: 6px;
+                    }
+                }
+
+                .section-flash-sale-content {
+                    margin-top: 16px;
+                    overflow: hidden;
+
+                    ul {
+                        padding: 0 !important;
+                        margin: 0 !important;
+                        display: flex;
+                        flex-direction: col;
+                        max-width: 1200px;
+
+                        li {
+                            display: flex;
+
+                            .flash-sale-item {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                height: 15.5rem;
+                                width: 12.5rem;
+
+                                .flash-sale-item-image {
+                                    display: flex;
+                                    width: 170px;
+                                    height: 170px;
+                                    background-size: contain;
+                                    background-repeat: no-repeat;
+                                    margin-bottom: 6px;
+                                }
+            
+                                .flash-sale-item-price {
+                                    display: flex;
+                                    align-items: center;   
+                                    color: #ee4d2d;
+                                    
+                                    span {
+                                        font-size: 1rem;
+                                        margin-right: .125rem
+                                    }
+
+                                    strong {
+                                        font-size: 1.25rem;
+                                        font-weight: 500;
+                                    }
+                                }
+            
+                                .flash-sale-item-statement {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    text-transform: uppercase;
+                                    font-weight: 700;
+                                    color: #fff;
+                                    background-color: rgb(191, 54, 54);
+                                    width: 150px;
+                                    border: 1px solid red;
+                                    padding: 0 20px;
+                                    border-radius: 20px;
+                                    font-size: 0.65rem;
+                                    margin-top: 6px;
+                                }
+
+                                &:hover {
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .section-sale-banner {
+                margin-top: 24px;
+                margin-bottom: 24px;
+                width: 1200px;
+                height: auto;
+
+                .section-sale-banner-content {
+                    width: 1200px;
+
+                    .sale-banner-item {
+                        height: 110px;
+                        width: 100%;
+                        border-radius: 10px;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            .section-origin-dev-mall {
+                margin-top: 24px;
+                margin-bottom: 24px;
+                width: 1200px;
+                height: 538px;
+
+                .main-section-header {
+
+                    span {
+                        padding-right: 12px;
+                        border-right: 1px solid #ccc;
+                        color: #ee4d2d;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    .sub-section-mall-header {
+                        display: flex;
+                        align-items: center;
+    
+                        .promises {
+                            display: flex;
+                            width: 850px;
+    
+                            .promise-item {
+                                margin: 0 12px;
+                                text-transform: capitalize;
+                                font-size: 1rem;
+                                color: #000;
+    
+                                i {
+                                    border: 1px solid red;
+                                    color: #fff;
+                                    margin-right: 4px;
+                                    padding: 2px 2px;
+                                    font-size: 0.75rem;
+                                    background-color: #ee4d2d;
+                                }
+                            }
+                        }
+
+                        .btn-see-all-mall {
+                            font-size: 1rem;
+                            text-transform: capitalize;
+                            font-weight: 400;
+
+                            span {
+                                border: none;
+                            }
+
+                            i {
+                                color: #ee4d2d;
+                            }
+
+                            &:hover {
+                                cursor: pointer;
                             }
                         }
                     }
