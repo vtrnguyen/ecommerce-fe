@@ -54,7 +54,153 @@ class HomeContent extends Component {
                         </div>
                     </div>
                     <div className="section-services">
-                        
+                        <div className="service-item">
+                            <div className="service-image">
+                                <i class="fas fa-money-check-alt"></i>
+                            </div>
+                            <div className="service-description">
+                                Voucher giảm đến 1 triệu
+                            </div>
+                        </div>
+                        <div className="service-item">
+                            <div className="service-image">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <div className="service-description">
+                                Miễn phí ship có Origin Dev
+                            </div>
+                        </div>
+                        <div className="service-item">
+                            <div className="service-image">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div className="service-description">
+                                Mua nhiều giảm sâu
+                            </div>
+                        </div>
+                        <div className="service-item">
+                            <div className="service-image">
+                                <i class="fas fa-hourglass-start"></i>
+                            </div>
+                            <div className="service-description">
+                                Khung giờ săn sale
+                            </div>
+                        </div>
+                        <div className="service-item">
+                            <div className="service-image">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div className="service-description">
+                                Mã giảm giá
+                            </div>
+                        </div>
+                        <div className="service-item">
+                            <div className="service-image">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <div className="service-description">
+                                Origin Dev siêu rẻ
+                            </div>
+                        </div>
+                        <div className="service-item">
+                            <div className="service-image">
+                                <i class="fas fa-arrow-down"></i>
+                            </div>
+                            <div className="service-description">
+                                Origin Dev style voucher 40%
+                            </div>
+                        </div>
+                        <div className="service-item">
+                            <div className="service-image">
+                                <i class="fas fa-globe-americas"></i>
+                            </div>
+                            <div className="service-description">
+                                Hàng quốc tế
+                            </div>
+                        </div>
+                        <div className="service-item">
+                            <div className="service-image">
+                                <i class="fab fa-cc-amazon-pay"></i>
+                            </div>
+                            <div className="service-description">
+                                Nạp thẻ & Dịch vụ
+                            </div>
+                        </div>
+                    </div>
+                    <div className="main">
+                        <div className="main-section-container">
+                            <div className="section-category main-section-item">
+                                <div className="main-section-header">
+                                    Danh mục sản phẩm
+                                </div>
+                                <div className="section-category-content">
+                                    <ul>
+                                        <li>
+                                            <div className="product-item">
+                                                <div className="product-item-image t-shirt"></div>
+                                                <div className="product-item-name">
+                                                    Thời Trang Nam
+                                                </div>
+                                            </div>
+                                            <div className="product-item">
+                                                <div className="product-item-image phone"></div>
+                                                <div className="product-item-name">
+                                                    Điện Thoại & Phụ Kiện
+                                                </div>
+                                            </div>
+                                            <div className="product-item">
+                                                <div className="product-item-image electronic-equiptment"></div>
+                                                <div className="product-item-name">
+                                                    Thiết Bị Điện Tử
+                                                </div>
+                                            </div>
+                                            <div className="product-item">
+                                                <div className="product-item-image computer"></div>
+                                                <div className="product-item-name">
+                                                    Máy Tính & Laptop
+                                                </div>
+                                            </div>
+                                            <div className="product-item">
+                                                <div className="product-item-image camera"></div>
+                                                <div className="product-item-name">
+                                                    Máy Ảnh & Máy Quay Phim
+                                                </div>
+                                            </div>
+                                            <div className="product-item">
+                                                <div className="product-item-image watch"></div>
+                                                <div className="product-item-name">
+                                                    Đồng Hồ
+                                                </div>
+                                            </div>
+                                            <div className="product-item">
+                                                <div className="product-item-image shoe"></div>
+                                                <div className="product-item-name">
+                                                    Giày Dép Nam
+                                                </div>
+                                            </div>
+                                            <div className="product-item">
+                                                <div className="product-item-image household-electric-appliances"></div>
+                                                <div className="product-item-name">
+                                                    Thiết Bị Điện Gia Dụng
+                                                </div>
+                                            </div>
+                                            <div className="product-item">
+                                                <div className="product-item-image sport-travel"></div>
+                                                <div className="product-item-name">
+                                                    Thể Thao & Du Lịch
+                                                </div>
+                                            </div>
+                                            <div className="product-item">
+                                                <div className="product-item-image driver"></div>
+                                                <div className="product-item-name">
+                                                    Ô Tô & Xe Máy & Xe Đạp
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </>
