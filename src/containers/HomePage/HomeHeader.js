@@ -51,12 +51,12 @@ class HomeHeader extends Component {
                                         </div>
                                     </div>
                                     <div className="search-recommened">
-                                        <a href="facebook.com">đồng hồ trẻ em</a>
-                                        <a href="facebook.com">chuột Attact Shark R1</a>
-                                        <a href="facebook.com">tăm chỉ nha khoa</a>
-                                        <a href="facebook.com">áo Barcelona</a>
-                                        <a href="facebook.com">iPhone 15 Pro Max</a>
-                                        <a href="facebook.com">xe máy Vision 2024</a>
+                                        <a href="/">đồng hồ trẻ em</a>
+                                        <a href="/">chuột Attact Shark R1</a>
+                                        <a href="/">tăm chỉ nha khoa</a>
+                                        <a href="/">áo Barcelona</a>
+                                        <a href="/">iPhone 15 Pro Max</a>
+                                        <a href="/">xe máy Vision 2024</a>
                                     </div>
                                 </div>
                                 <div className="infor-icon">
