@@ -53,11 +53,46 @@
     
                 .homepage,
                 .support,
-                .choose-language,
-                .my-account {
+                .choose-language {
                     &:hover {
                         cursor: pointer;
                         opacity: 0.8;
+                    }
+                }
+
+                .my-account {
+                    position: relative;
+
+                    .popup-menu {
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background-color: #fff;
+                        box-shadow: 0 0.375rem 0.375rem rgba(0, 0, 0, 0.1);
+                        z-index: 1000;
+                        padding: 0.5rem;
+                        width: 10rem;
+                        border-radius: 0.25rem;
+                        font-size: 0.875rem;
+
+                        .popup-item {
+                            padding: 0.5rem;
+                            cursor: pointer;
+                            color: #333;
+
+                            &:hover {
+                                background-color: #f2f2f2;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+
+                        .popup-menu {
+                            display: block;
+                        }
                     }
                 }
     

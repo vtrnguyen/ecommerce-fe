@@ -1,11 +1,14 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { loginSuccess } from "../../store/authSlice";
+import { handleLogin } from "../../services/userService";
 import "./Login.scss";
 
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userName: '',
+            email: '',
             password: '',
             isShowPassword: false,
             errMessage: '',
@@ -14,7 +17,7 @@ class Login extends Component {
 
     handleChangeUsername = (e) => {
         this.setState({
-            username: e.target.value,
+            email: e.target.value,
         })
     }
 
@@ -25,7 +28,21 @@ class Login extends Component {
     }
 
     handleLogin = async () => {
-        alert("Clicked me!!!");
+        try {
+            const userInfor = {
+                email: this.state.email,
+                password: this.state.password,
+            };
+            const response = await handleLogin(userInfor);
+
+            if (response.loginInfor.errCode === 0) {
+                this.props.loginSuccess(response.loginInfor);
+            } else {
+                this.setState({ errMessage: response.loginInfor.errMessage });
+            }
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     handleShowHidePassword = () => {
@@ -45,7 +62,7 @@ class Login extends Component {
             <>
                 <div className="login-header">
                     <div className="logo-container">
-                        <div className="logo"><i class="fas fa-shopping-cart"></i> Origin Dev</div>
+                        <div className="logo"><i className="fas fa-shopping-cart"></i> Origin Dev</div>
                         <div className="sub-text">Đăng nhập</div>
                     </div>
                     <div className="helper">Bạn cần giúp đỡ?</div>
@@ -59,7 +76,7 @@ class Login extends Component {
                                     type="text" 
                                     className="form-control" 
                                     placeholder="Tên đăng nhập, email hoặc số điện thoại"
-                                    value={this.state.username}
+                                    value={this.state.email}
                                     onChange={(e) => this.handleChangeUsername(e)}
                                     onKeyDown={(e) => this.handleKeyDown(e)}
                                 />
@@ -117,4 +134,8 @@ class Login extends Component {
     }
 }
 
-export default Login;
+const mapDispatchToProps = {
+    loginSuccess,
+}
+
+export default connect(null, mapDispatchToProps)(Login);

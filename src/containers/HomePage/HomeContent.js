@@ -59,7 +59,7 @@ class HomeContent extends Component {
                     <div className="section-services">
                         <div className="service-item">
                             <div className="service-image">
-                                <i class="fas fa-money-check-alt"></i>
+                                <i className="fas fa-money-check-alt"></i>
                             </div>
                             <div className="service-description">
                                 Voucher giảm đến 1 triệu
@@ -67,7 +67,7 @@ class HomeContent extends Component {
                         </div>
                         <div className="service-item">
                             <div className="service-image">
-                                <i class="fas fa-shipping-fast"></i>
+                                <i className="fas fa-shipping-fast"></i>
                             </div>
                             <div className="service-description">
                                 Miễn phí ship có Origin Dev
@@ -75,7 +75,7 @@ class HomeContent extends Component {
                         </div>
                         <div className="service-item">
                             <div className="service-image">
-                                <i class="fas fa-check"></i>
+                                <i className="fas fa-check"></i>
                             </div>
                             <div className="service-description">
                                 Mua nhiều giảm sâu
@@ -83,7 +83,7 @@ class HomeContent extends Component {
                         </div>
                         <div className="service-item">
                             <div className="service-image">
-                                <i class="fas fa-hourglass-start"></i>
+                                <i className="fas fa-hourglass-start"></i>
                             </div>
                             <div className="service-description">
                                 Khung giờ săn sale
@@ -91,7 +91,7 @@ class HomeContent extends Component {
                         </div>
                         <div className="service-item">
                             <div className="service-image">
-                                <i class="fas fa-code"></i>
+                                <i className="fas fa-code"></i>
                             </div>
                             <div className="service-description">
                                 Mã giảm giá
@@ -99,7 +99,7 @@ class HomeContent extends Component {
                         </div>
                         <div className="service-item">
                             <div className="service-image">
-                                <i class="fas fa-hand-holding-usd"></i>
+                                <i className="fas fa-hand-holding-usd"></i>
                             </div>
                             <div className="service-description">
                                 Origin Dev siêu rẻ
@@ -107,7 +107,7 @@ class HomeContent extends Component {
                         </div>
                         <div className="service-item">
                             <div className="service-image">
-                                <i class="fas fa-arrow-down"></i>
+                                <i className="fas fa-arrow-down"></i>
                             </div>
                             <div className="service-description">
                                 Origin Dev style voucher 40%
@@ -115,7 +115,7 @@ class HomeContent extends Component {
                         </div>
                         <div className="service-item">
                             <div className="service-image">
-                                <i class="fas fa-globe-americas"></i>
+                                <i className="fas fa-globe-americas"></i>
                             </div>
                             <div className="service-description">
                                 Hàng quốc tế
@@ -123,7 +123,7 @@ class HomeContent extends Component {
                         </div>
                         <div className="service-item">
                             <div className="service-image">
-                                <i class="fab fa-cc-amazon-pay"></i>
+                                <i className="fab fa-cc-amazon-pay"></i>
                             </div>
                             <div className="service-description">
                                 Nạp thẻ & Dịch vụ
@@ -477,21 +477,21 @@ class HomeContent extends Component {
                                     <div className="sub-section-mall-header">
                                         <div className="promises">
                                             <div className="promise-item">
-                                                <i class="fas fa-undo-alt"></i>
+                                                <i className="fas fa-undo-alt"></i>
                                                 Trả Hàng Miễn Phí 15 ngày
                                             </div>
                                             <div className="promise-item">
-                                                <i class="fas fa-check-double"></i>
+                                                <i className="fas fa-check-double"></i>
                                                 Hàng Chính Hãng 100%
                                             </div>
                                             <div className="promise-item">
-                                                <i class="fas fa-shipping-fast"></i>
+                                                <i className="fas fa-shipping-fast"></i>
                                                 Miễn Phí Vận Chuyển
                                             </div>
                                         </div>
                                         <div className="btn-see-all-mall">
                                             <span>Xem tất cả</span>
-                                            <i class="fas fa-arrow-circle-right"></i>
+                                            <i className="fas fa-arrow-circle-right"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -616,13 +616,13 @@ class HomeContent extends Component {
                                     <span>Tìm kiếm hàng đầu</span>
                                     <div className="btn-see-all-search">
                                         <span>Xem tất cả</span>
-                                        <i class="fas fa-angle-right"></i>
+                                        <i className="fas fa-angle-right"></i>
                                     </div>
                                 </div>
                                 <div className="regular-search-list">
                                     <ul>
                                         <li>
-                                            <div class="regular-search-item">
+                                            <div className="regular-search-item">
                                                 <div className="regular-search-detail-infor">
                                                     <div 
                                                         className="regular-search-image"
@@ -638,7 +638,7 @@ class HomeContent extends Component {
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="regular-search-item">
+                                            <div className="regular-search-item">
                                                 <div className="regular-search-detail-infor">
                                                     <div 
                                                         className="regular-search-image"
@@ -654,7 +654,7 @@ class HomeContent extends Component {
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="regular-search-item">
+                                            <div className="regular-search-item">
                                                 <div className="regular-search-detail-infor">
                                                     <div 
                                                         className="regular-search-image"
@@ -670,7 +670,7 @@ class HomeContent extends Component {
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="regular-search-item">
+                                            <div className="regular-search-item">
                                                 <div className="regular-search-detail-infor">
                                                     <div 
                                                         className="regular-search-image"
@@ -686,7 +686,7 @@ class HomeContent extends Component {
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="regular-search-item">
+                                            <div className="regular-search-item">
                                                 <div className="regular-search-detail-infor">
                                                     <div 
                                                         className="regular-search-image"
@@ -702,7 +702,7 @@ class HomeContent extends Component {
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="regular-search-item">
+                                            <div className="regular-search-item">
                                                 <div className="regular-search-detail-infor">
                                                     <div 
                                                         className="regular-search-image"
