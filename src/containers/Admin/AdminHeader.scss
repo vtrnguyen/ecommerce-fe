@@ -1,0 +1,79 @@
+.admin-header-wrapper {
+    box-shadow: 0 0.375rem 0.375rem rgba(0, 0, 0, .06);
+    height: 5.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8.5rem;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    margin-bottom: 8px;
+    
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 0.645rem;
+
+        .logo {
+            font-size: 2.25rem;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #ff3b18;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .sub-text {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.25rem;
+        }
+    }
+
+    .admin-infor {
+        position: relative;
+        display: flex;
+        gap: 12px;
+        color: #ff3b18;
+        align-items: center;
+        font-size: 16px;
+
+        .popup-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0 0.375rem 0.375rem rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 0.5rem;
+            width: 10rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+
+            .popup-item {
+                padding: 0.5rem;
+                cursor: pointer;
+                color: #333;
+    
+                &:hover {
+                    background-color: #f2f2f2;
+                }
+            }
+            
+        }
+        
+        .admin-avatar {
+            font-size: 20px !important;
+        }
+
+        &:hover {
+            cursor: pointer;
+    
+            .popup-menu {
+                display: block;
+            }
+        }
+    }
+}

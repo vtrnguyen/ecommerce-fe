@@ -2,25 +2,15 @@ import React, { Component, Fragment } from "react";
 import './App.scss';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { connect } from "react-redux";
-import { createBrowserHistory } from "history";
-
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import Login from "./Login/Login";
-import HomePage from "./HomePage/HomePage";
-
-const history = createBrowserHistory();
+import HomePage from "../containers/User/HomePage";
+import PrivateRoute from "../components/PrivateRoute";
+import AdminPage from "./Admin/AdminPage";
+import ManageUser from "../containers/Admin/Navtigations/ManageUser";
 
 class App extends Component {
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.isAuthenticated !== this.props.isAuthenticated) {
-      if (this.props.isAuthenticated) {
-        history.push("/");
-      } else {
-        history.push("/login");
-      }
-    }
-  }
-
   render() {
     const { isAuthenticated } = this.props;
 
@@ -30,18 +20,42 @@ class App extends Component {
           <Routes>
             <Route 
               path="/" 
-              element={isAuthenticated ? <HomePage /> : <Navigate to="/login" />}
+              element={isAuthenticated ? <HomePage /> : <Navigate to="/login" replace />}
             />
             <Route 
               path="/home" 
-              element={isAuthenticated ? <HomePage /> : <Navigate to="/login" />}
+              element={isAuthenticated ? <HomePage /> : <Navigate to="/login" replace />}
             />
             <Route 
               path="/login" 
-              element={isAuthenticated ? <Navigate to="/" /> : <Login />} 
+              element={isAuthenticated ? <Navigate to="/" replace /> : <Login />} 
             />
+            <Route
+              path="/admin" 
+              element={isAuthenticated ? <PrivateRoute /> : <Navigate to="/login" replace />}
+            >
+              <Route 
+                path="/admin" 
+                element={<AdminPage />} 
+              />
+              <Route 
+                path="/admin/manage-user" 
+                element={<ManageUser />} 
+              />
+            </Route>
           </Routes>
         </BrowserRouter>
+        <ToastContainer
+            position="top-right"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover={false}
+        />
       </Fragment>
     )
   }

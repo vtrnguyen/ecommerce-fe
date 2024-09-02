@@ -7,9 +7,11 @@ const userSlice = createSlice({
     },
     reducers: {
         fetchDataSuccess: (state, action) => {
+            state.isFetching = false;
             state.userInfor = action.payload.userInfor;
         },
         fetchDataFail: (state) => {
+            state.isFetching = false;
             state.userInfor = {};
         },
     }

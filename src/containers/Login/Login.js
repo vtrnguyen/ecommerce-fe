@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { loginSuccess } from "../../store/authSlice";
+import { fetchDataSuccess } from "../../store/userSlice";
 import { handleLogin } from "../../services/userService";
 import "./Login.scss";
 
@@ -28,20 +29,26 @@ class Login extends Component {
     }
 
     handleLogin = async () => {
-        try {
-            const userInfor = {
-                email: this.state.email,
-                password: this.state.password,
-            };
-            const response = await handleLogin(userInfor);
+        if (this.state.email && this.state.password) {
+            try {
+                const userInfor = {
+                    email: this.state.email,
+                    password: this.state.password,
+                };
+                const response = await handleLogin(userInfor);
 
-            if (response.loginInfor.errCode === 0) {
-                this.props.loginSuccess(response.loginInfor);
-            } else {
-                this.setState({ errMessage: response.loginInfor.errMessage });
+                if (response.loginInfor.errCode === 0) {
+                    this.props.loginSuccess(response.loginInfor);
+                } else {
+                    this.setState({ errMessage: response.loginInfor.errMessage });
+                }
+            } catch (error) {
+                console.log(error);
             }
-        } catch (error) {
-            console.log(error);
+        } else {
+            this.setState({
+                errMessage: "Missing input's parameter!!!",
+            });
         }
     }
 
@@ -136,6 +143,7 @@ class Login extends Component {
 
 const mapDispatchToProps = {
     loginSuccess,
+    fetchDataSuccess,
 }
 
 export default connect(null, mapDispatchToProps)(Login);

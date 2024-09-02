@@ -20,14 +20,14 @@ class HomePage extends Component {
     }
 
     async componentDidUpdate(prevProps) {
-        if (prevProps.userInfor !== this.props.userInfor) {
+        if (prevProps.userInfor !== this.props.userInfor && this.props.userInfor.id) {
             await this.getInforUser();
         }
     }
 
     getInforUser = async () => {
         let { userInfor } = this.props;
-        
+
         if (userInfor && userInfor.id) {
             let user = await handleGetUserInfor(userInfor.id);
             
@@ -41,6 +41,8 @@ class HomePage extends Component {
                 this.setState({
                     userInfor: this.state.userInfor,
                 });
+
+                this.props.fetchDataFail();
             }
         }
     } 

@@ -65,11 +65,19 @@ class HomeHeader extends Component {
                                 </div>
                                 <div className="nav-item my-account">
                                     <i className="fas fa-user"></i>
-                                    { userInfor ? userInfor.firstName + " " + userInfor.lastName : "Tài khoản của tôi" }
-                                    <div className="popup-menu">
-                                        <div className="popup-item" onClick={this.handleSeeUserInfor}>Thông tin cá nhân</div>
-                                        <div className="popup-item" onClick={this.handleBtnLogout}>Đăng xuất</div>
-                                    </div>
+                                    { userInfor && userInfor.firstName && userInfor.lastName 
+                                        ? userInfor.firstName + " " + userInfor.lastName 
+                                        : "Tài khoản của tôi" 
+                                    }
+                                    { userInfor && userInfor.firstName && userInfor.lastName 
+                                        ? 
+                                        <div className="popup-menu">
+                                            <div className="popup-item" onClick={this.handleSeeUserInfor}>Thông tin cá nhân</div>
+                                            <div className="popup-item" onClick={this.handleBtnLogout}>Đăng xuất</div>
+                                        </div>
+                                        :
+                                        <></>
+                                    }
                                 </div>
                             </div>
                             <div className="display-infor">
