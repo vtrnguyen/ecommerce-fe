@@ -342,7 +342,7 @@ class ManageUser extends React.Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                {users.map((item, index) => {
+                                {users && users.length > 0 && users.map((item, index) => {
                                     return (
                                         <tr key={index}>
                                             <th scope="row">{index + 1}</th>

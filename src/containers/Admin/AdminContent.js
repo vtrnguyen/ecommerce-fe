@@ -7,8 +7,8 @@ class AdminContent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedNav: "user",
-            displayComponent: <ManageUser />,
+            selectedNav: "category",
+            displayComponent: <ManageCategory />,
         }
     }
 

@@ -3,12 +3,14 @@ import { connect } from "react-redux";
 import "./HomeHeader.scss";
 import { logout } from "../../store/authSlice";
 import { fetchDataFail } from "../../store/userSlice";
+import { Navigate } from "react-router";
 
 class HomeHeader extends Component {
     constructor(props) {
         super(props);
         this.state = {
             userInfor: {},
+            isRedirectToAdmin: false,
         }
     }
 
@@ -35,8 +37,16 @@ class HomeHeader extends Component {
         this.props.logout();
     }
 
+    redirectToAdmin = () => {
+        this.setState({ isRedirectToAdmin: true });
+    }
+
     render() {
         let userInfor = this.state.userInfor;
+
+        if (this.state.isRedirectToAdmin) {
+            return <Navigate to="/admin" />;
+        }
         
         return (
             <>
@@ -73,6 +83,10 @@ class HomeHeader extends Component {
                                         ? 
                                         <div className="popup-menu">
                                             <div className="popup-item" onClick={this.handleSeeUserInfor}>Thông tin cá nhân</div>
+                                            { userInfor.roleID === "R0"
+                                                ? <div className="popup-item" onClick={this.redirectToAdmin}>Trang quản trị</div>
+                                                : <></>
+                                            }
                                             <div className="popup-item" onClick={this.handleBtnLogout}>Đăng xuất</div>
                                         </div>
                                         :
@@ -142,6 +156,6 @@ class HomeHeader extends Component {
 
 const mapDispatchToProps = {
     logout, fetchDataFail
-}
+};
 
 export default connect(null, mapDispatchToProps)(HomeHeader);
