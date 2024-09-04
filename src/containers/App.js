@@ -8,7 +8,7 @@ import Login from "./Login/Login";
 import HomePage from "../containers/User/HomePage";
 import PrivateRoute from "../components/PrivateRoute";
 import AdminPage from "./Admin/AdminPage";
-import ManageUser from "../containers/Admin/Navtigations/ManageUser";
+import ManageCategoryItem from "../containers/Admin/Navtigations/Redirect/ManageCategoryItem";
 
 class App extends Component {
   render() {
@@ -39,8 +39,8 @@ class App extends Component {
                 element={<AdminPage />} 
               />
               <Route 
-                path="/admin/manage-user" 
-                element={<ManageUser />} 
+                path="/admin/category-item/:id" 
+                element={<ManageCategoryItem />} 
               />
             </Route>
           </Routes>

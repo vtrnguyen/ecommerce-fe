@@ -1,15 +1,18 @@
 import React from "react";
-import { handleCreateNewCategory, handleGetAllCategory, handleDeleteCategory } from "../../../services/categoryService";
+import { handleCreateNewCategory, handleGetAllCategory, 
+    handleDeleteCategory, handleUpdateCategory,
+} from "../../../services/categoryService";
 import "./ManageCategory.scss";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 class ManageCategory extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             categories: [],
-            isOpenFormCreateCategory: true,
             isShowDeleteModal: false,
+            isUpdating: false,
 
             // create category
             createCategoryName: "",
@@ -18,6 +21,11 @@ class ManageCategory extends React.Component {
             // delete category
             deleteCategoryID: "",
             deleteCategoryName: "",
+
+            // update category
+            updateCategoryID: "",
+            updateCategoryName: "",
+            updateCategoryImage: "",
         }
     }
 
@@ -45,11 +53,19 @@ class ManageCategory extends React.Component {
     handleOnChangeImage = async (e) => {
         let data = e.target.files;
         let file = data[0];
+        let { isUpdating } = this.state;
         if (file) {
             let encodedImageBase64 = await this.encodeBase64(file);
-            this.setState({
-                createCategoryImage: encodedImageBase64
-            });
+
+            if (!isUpdating) {
+                this.setState({
+                    createCategoryImage: encodedImageBase64
+                });
+            } else {
+                this.setState({
+                    updateCategoryImage: encodedImageBase64
+                });
+            }
         }
     }
 
@@ -88,6 +104,8 @@ class ManageCategory extends React.Component {
     toggleModal = () => {
         this.setState({
             isShowDeleteModal: false,
+            deleteCategoryID: "",
+            deleteCategoryName: "",
         });
     }
 
@@ -111,51 +129,102 @@ class ManageCategory extends React.Component {
             });
 
             await this.componentDidMount();
+        } else {
+            toast.error("Xóa danh mục không thành công");
         }
     }
+
+    handleClickBtnUpdate = (updateID, updateName, updateImage) => {
+        this.setState({
+            isUpdating: true,
+            updateCategoryID: updateID,
+            updateCategoryName: updateName,
+            updateCategoryImage: updateImage,
+        }, () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    handleSubmitFormUpdateCategory = async () => {
+        if (!this.state.updateCategoryID || !this.state.updateCategoryName || !this.state.updateCategoryImage) {
+            toast.warn("Không được để trống thông tin!!!");
+        } else {
+            let updateCategoryInfor = await(handleUpdateCategory({
+                id: this.state.updateCategoryID,
+                categoryName: this.state.updateCategoryName,
+                categoryImage: this.state.updateCategoryImage,
+            }));
+
+            if (updateCategoryInfor && updateCategoryInfor.updateCategoryInfor && updateCategoryInfor.updateCategoryInfor.errCode === 0) {
+                toast.success("Cập nhật thông tin thành công");
+        
+                this.setState({
+                    isUpdating: false,
+                    updateCategoryID: "",
+                    updateCategoryName: "",
+                    updateCategoryImage: "",
+                });
     
+                await this.componentDidMount();
+            } else {
+                toast.error("Cập nhật thông tin thất bại!!!");
+            }
+        }
+    }
+
     render() {
-        let { categories, isOpenFormCreateCategory, 
-            createCategoryName, isShowDeleteModal,
-            deleteCategoryName,
+        let { categories, createCategoryName, 
+            isShowDeleteModal, deleteCategoryName,
+            isUpdating, updateCategoryName,
         } = this.state;
+
+        let statusNameCategoryName = !isUpdating ? "createCategoryName" : "updateCategoryName";
+        let statusNameCategoryValue = !isUpdating ? createCategoryName : updateCategoryName;
 
         return (
             <div className="manage-category-container">
                 <div className="information-title">Quản lý danh mục sản phẩm</div>
                 <div className="information-content">
-                    {isOpenFormCreateCategory && (
-                        <form className="create-category-form">
-                            <div className="form-group row mb-3">
-                                <div className="col-6 mb-2">
-                                    <input
-                                        type="text" 
-                                        className="form-control" 
-                                        placeholder="Tên danh mục"
-                                        name="createCategoryName"
-                                        value={createCategoryName}
-                                        onChange={(event) => this.handleOnChangeInput(event)}
-                                    />
-                                </div>
-                                <div className="col-6">
-                                    <input 
-                                        type="file" 
-                                        className="form-control" 
-                                        placeholder="Hình ảnh"
-                                        name="createCategoryImage"
-                                        onChange={(event) => this.handleOnChangeImage(event)}
-                                    />
-                                </div>
-                            </div>
+                    <form className="create-category-form">
+                        <div className="form-group row mb-3">
+                                    <div className="col-6 mb-2">
+                                        <input
+                                            type="text" 
+                                            className="form-control" 
+                                            placeholder="Tên danh mục"
+                                            name={statusNameCategoryName}
+                                            value={statusNameCategoryValue}
+                                            onChange={(event) => this.handleOnChangeInput(event)}
+                                        />
+                                    </div>
+                                    <div className="col-6">
+                                        <input 
+                                            type="file" 
+                                            className="form-control" 
+                                            placeholder="Hình ảnh"
+                                            onChange={(event) => this.handleOnChangeImage(event)}
+                                        />
+                                    </div>
+                        </div>
+                        {!isUpdating
+                        ?
                             <button 
                                 type="button" 
                                 className="btn btn-primary mb-4"
                                 onClick={() => this.handleSubmitFormCreateCategory()}
                             >
-                                    Tạo danh mục
+                                Tạo danh mục
                             </button>
-                        </form>
-                    )}
+                        :
+                            <button 
+                                type="button" 
+                                className="btn btn-success mb-4"
+                                onClick={() => this.handleSubmitFormUpdateCategory()}
+                            >
+                                Lưu thông tin
+                            </button>
+                        }
+                    </form>
                     <div className="information-table">
                         <table className="table">
                             <thead>
@@ -164,6 +233,7 @@ class ManageCategory extends React.Component {
                                     <th scope="col">Tên danh mục</th>
                                     <th scope="col">Hình ảnh</th>
                                     <th scope="col">Hành động</th>
+                                    <th scope="col">Chi tiết danh mục</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -184,9 +254,18 @@ class ManageCategory extends React.Component {
                                             </button>
                                             <button 
                                                 className="btn btn-primary"
+                                                onClick={() => this.handleClickBtnUpdate(item.id, item.categoryName, item.image)}
                                             >
                                                 Sửa
                                             </button>
+                                        </td>
+                                        <td>
+                                            <Link 
+                                                to={`/admin/category-item/${item.id}`}
+                                                target="_blank"
+                                            >
+                                                Đi
+                                            </Link>
                                         </td>
                                     </tr>
                                 )
