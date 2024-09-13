@@ -262,7 +262,6 @@ class ManageCategory extends React.Component {
                                         <td>
                                             <Link 
                                                 to={`/admin/category-item/${item.id}`}
-                                                target="_blank"
                                             >
                                                 Đi
                                             </Link>

@@ -20,9 +20,14 @@ const handleUpdateCategory = (updateInfor) => {
     return axios.put("/category/update-category", updateInfor);
 }
 
+const handleGetCategoryInfor = (categoryID) => {
+    return axios.get(`/category/get-category-infor/?id=${categoryID}`);
+}
+
 export {
     handleCreateNewCategory, 
     handleGetAllCategory,
     handleDeleteCategory,
     handleUpdateCategory,
+    handleGetCategoryInfor,
 }
